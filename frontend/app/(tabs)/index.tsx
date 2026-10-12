@@ -24,7 +24,7 @@ export default function OnAirScreen() {
     <View testID="on-air-screen" style={[styles.root, { paddingBottom: TAB_BAR_SPACE + insets.bottom }]}>
       <View style={styles.top}>
         <Image testID="station-logo" source={{ uri: LOGO_URL }} style={styles.logo} contentFit="contain" />
-        <Text testID="station-name" style={[styles.name, { color: colors.text }]}>{STATION_NAME}</Text>
+        <Text testID="station-name" numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.7} style={[styles.name, { color: colors.text }]}>{STATION_NAME}</Text>
         <Text style={[styles.tagline, { color: colors.textMuted }]}>{STATION_TAGLINE}</Text>
       </View>
 
@@ -48,7 +48,7 @@ export default function OnAirScreen() {
             {loading ? (
               <ActivityIndicator testID="player-loading" size="large" color="#ffffff" />
             ) : (
-              <Feather name={playing ? "pause" : "play"} size={48} color="#ffffff" style={!playing && { marginLeft: 6 }} />
+              <Feather name={playing ? "pause" : "play"} size={30} color="#ffffff" style={!playing && { marginLeft: 4 }} />
             )}
           </LinearGradient>
         </Pressable>
@@ -75,19 +75,27 @@ const styles = StyleSheet.create({
   root: { flex: 1, paddingHorizontal: 24, paddingTop: 16 },
   top: { alignItems: "center", gap: 6 },
   logo: { width: 80, height: 80, borderRadius: 20 },
-  name: { fontSize: 28, fontWeight: "800", marginTop: 4 },
-  tagline: { fontSize: 13, textAlign: "center", maxWidth: 256 },
-  center: { flex: 1, alignItems: "center", justifyContent: "center", gap: 14 },
+  name: { fontSize: 26, fontWeight: "700", marginTop: 4, textAlign: "center", alignSelf: "stretch" },
+  tagline: { fontSize: 13, fontWeight: "300", textAlign: "center", maxWidth: 256 },
+  center: { flex: 1, alignItems: "center", justifyContent: "center", gap: 12 },
   playShadow: {
-    borderRadius: 48,
-    shadowOpacity: 0.7,
-    shadowRadius: 22,
+    borderRadius: 36,
+    shadowOpacity: 0.55,
+    shadowRadius: 16,
     shadowOffset: { width: 0, height: 0 },
-    elevation: 14,
+    elevation: 10,
   },
-  play: { width: 96, height: 96, borderRadius: 48, alignItems: "center", justifyContent: "center" },
-  liveLabel: { fontSize: 11, fontWeight: "700", textTransform: "uppercase", letterSpacing: 1.4 },
+  play: {
+    width: 72,
+    height: 72,
+    borderRadius: 36,
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.35)",
+  },
+  liveLabel: { fontSize: 10, fontWeight: "400", textTransform: "uppercase", letterSpacing: 1.6 },
   bottom: { alignItems: "center", gap: 8, paddingBottom: 4 },
   seasonal: { width: "100%", maxWidth: 190, borderRadius: 14 },
-  privacy: { fontSize: 10, textTransform: "uppercase", textDecorationLine: "underline", letterSpacing: 1 },
+  privacy: { fontSize: 10, fontWeight: "300", textTransform: "uppercase", textDecorationLine: "underline", letterSpacing: 1 },
 });

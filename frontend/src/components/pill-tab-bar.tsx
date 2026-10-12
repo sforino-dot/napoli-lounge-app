@@ -75,5 +75,5 @@ const styles = StyleSheet.create({
     gap: 2,
     paddingHorizontal: 6,
   },
-  label: { fontSize: 11, fontWeight: "700" },
+  label: { fontSize: 11, fontWeight: "500" },
 });

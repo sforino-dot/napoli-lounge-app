@@ -18,6 +18,11 @@ App radio nativa React Native + Expo (TS) per iOS/Android che replica la web app
 - app.json con permessi, UIBackgroundModes audio, icone e splash locali su #0a6e7a.
 - README in italiano.
 
+## Revisione grafica (2026-06)
+- Barra "In onda ora" più compatta; titolo stazione su una riga; play da 72pt con bordo sottile.
+- Pesi leggeri (300-400) per sottotitoli e testi secondari, grassetto solo sui titoli.
+- Social: card più compatte, distribuite in modo uniforme.
+
 ## Backlog
 - P0: verificare l'audio in background e a schermo bloccato con una development build su un telefono reale.
 - P1: completare i segnaposto delle credenziali in eas.json.

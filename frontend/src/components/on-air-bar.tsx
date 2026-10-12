@@ -30,7 +30,7 @@ export function OnAirBar() {
   return (
     <View
       testID="on-air-bar"
-      style={[styles.wrap, { paddingTop: insets.top + 8, backgroundColor: colors.card, borderBottomColor: colors.cardBorder }]}
+      style={[styles.wrap, { paddingTop: insets.top + 4, backgroundColor: colors.card, borderBottomColor: colors.cardBorder }]}
     >
       <View style={styles.row}>
         <View style={styles.left}>
@@ -69,18 +69,18 @@ export function OnAirBar() {
 }
 
 const styles = StyleSheet.create({
-  wrap: { paddingHorizontal: 16, paddingBottom: 10, borderBottomWidth: 1, gap: 8 },
+  wrap: { paddingHorizontal: 16, paddingBottom: 6, borderBottomWidth: 1, gap: 5 },
   row: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 12 },
-  left: { gap: 2 },
-  liveRow: { flexDirection: "row", alignItems: "center", gap: 6 },
-  dot: { width: 8, height: 8, borderRadius: 4 },
-  live: { fontSize: 11, fontWeight: "700", letterSpacing: 1.6 },
-  clock: { fontSize: 13, fontWeight: "600", fontVariant: ["tabular-nums"] },
+  left: { gap: 1 },
+  liveRow: { flexDirection: "row", alignItems: "center", gap: 5 },
+  dot: { width: 6, height: 6, borderRadius: 3 },
+  live: { fontSize: 9, fontWeight: "600", letterSpacing: 1.4 },
+  clock: { fontSize: 11, fontWeight: "300", fontVariant: ["tabular-nums"] },
   right: { flex: 1, alignItems: "flex-end" },
-  title: { fontSize: 15, fontWeight: "800", textAlign: "right" },
-  host: { fontSize: 12, textAlign: "right" },
-  track: { height: 3, borderRadius: 2, overflow: "hidden" },
-  fill: { height: 3, borderRadius: 2 },
-  small: { fontSize: 10, textTransform: "uppercase", letterSpacing: 0.8, fontWeight: "600" },
+  title: { fontSize: 13, fontWeight: "700", textAlign: "right" },
+  host: { fontSize: 11, fontWeight: "300", textAlign: "right" },
+  track: { height: 2, borderRadius: 1, overflow: "hidden" },
+  fill: { height: 2, borderRadius: 1 },
+  small: { fontSize: 9, textTransform: "uppercase", letterSpacing: 0.8, fontWeight: "400" },
   next: { flex: 1, textAlign: "right" },
 });
