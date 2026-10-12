@@ -41,7 +41,7 @@ export function OnAirBar() {
           <Text testID="on-air-clock" style={[styles.clock, { color: colors.text }]}>{clock}</Text>
         </View>
         <View style={styles.right}>
-          <Text testID="on-air-title" numberOfLines={1} style={[styles.title, { color: colors.text }]}>
+          <Text testID="on-air-title" numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.6} style={[styles.title, { color: colors.text }]}>
             {cur?.title || DEFAULT_TITLE}
           </Text>
           {cur ? (

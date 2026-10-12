@@ -47,7 +47,7 @@ export default function SocialScreen() {
           >
             <Badge s={s} />
             <View style={styles.texts}>
-              <Text style={[styles.name, { color: colors.text }]}>{s.name}</Text>
+              <Text numberOfLines={1} style={[styles.name, { color: colors.text }]}>{s.name}</Text>
               <Text numberOfLines={1} style={[styles.sub, { color: colors.textMuted }]}>{s.subtitle}</Text>
             </View>
             <Feather name="chevron-right" size={20} color={colors.textMuted} />
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   root: { flex: 1, paddingHorizontal: 16, paddingTop: 20 },
   title: { fontSize: 26, fontWeight: "700" },
   subtitle: { fontSize: 13, fontWeight: "300", marginTop: 4 },
-  list: { flex: 1, justifyContent: "space-evenly", paddingVertical: 4 },
+  list: { flex: 1, justifyContent: "space-evenly", paddingVertical: 4, overflow: "hidden" },
   row: {
     flexDirection: "row",
     alignItems: "center",
@@ -76,6 +76,6 @@ const styles = StyleSheet.create({
   badge: { width: 40, height: 40, borderRadius: 12, alignItems: "center", justifyContent: "center", overflow: "hidden" },
   brand: { width: 22, height: 22 },
   texts: { flex: 1 },
-  name: { fontSize: 15, fontWeight: "600" },
+  name: { fontSize: 14, fontWeight: "500" },
   sub: { fontSize: 12, fontWeight: "300", marginTop: 1 },
 });

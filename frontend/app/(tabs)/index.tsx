@@ -23,7 +23,9 @@ export default function OnAirScreen() {
     <TabScene>
     <View testID="on-air-screen" style={[styles.root, { paddingBottom: TAB_BAR_SPACE + insets.bottom }]}>
       <View style={styles.top}>
-        <Image testID="station-logo" source={{ uri: LOGO_URL }} style={styles.logo} contentFit="contain" />
+        <View style={styles.logoCrop}>
+          <Image testID="station-logo" source={{ uri: LOGO_URL }} style={styles.logo} contentFit="contain" />
+        </View>
         <Text testID="station-name" style={[styles.name, { color: colors.text }]}>{STATION_NAME}</Text>
         <Text style={[styles.tagline, { color: colors.textMuted }]}>{STATION_TAGLINE}</Text>
       </View>
@@ -74,11 +76,15 @@ export default function OnAirScreen() {
 const styles = StyleSheet.create({
   root: { flex: 1, paddingHorizontal: 24, paddingTop: 16 },
   top: { alignItems: "center", gap: 6 },
-  logo: { width: 80, height: 80, borderRadius: 20 },
-  name: { fontSize: 18, fontWeight: "700", marginTop: 4, textAlign: "center", width: "100%" },
+  // Il logo contiene già la scritta "Napoli Lounge": si mostra solo il simbolo (parte alta),
+  // così il nome compare una sola volta, nel testo sotto.
+  logoCrop: { width: 120, height: 50, overflow: "hidden" },
+  logo: { width: 120, height: 120, marginTop: -12 },
+  name: { fontSize: 20, fontWeight: "600", marginTop: 4, textAlign: "center", width: "100%" },
   tagline: { fontSize: 13, fontWeight: "300", textAlign: "center", maxWidth: 256 },
   center: { paddingVertical: 24, alignItems: "center", justifyContent: "center", gap: 12 },
   playShadow: {
+    marginBottom: 80,
     borderRadius: 32,
     shadowOpacity: 0.55,
     shadowRadius: 16,
