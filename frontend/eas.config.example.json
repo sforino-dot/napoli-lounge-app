@@ -1,0 +1,39 @@
+{
+  "cli": {
+    "version": ">= 16.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "ios": { "resourceClass": "m-medium" },
+      "android": { "buildType": "apk" }
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": { "buildType": "apk" }
+    },
+    "production": {
+      "autoIncrement": true,
+      "ios": { "resourceClass": "m-medium" },
+      "android": { "buildType": "app-bundle" }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "appleTeamId": "IL_TUO_TEAM_ID",
+        "ascAppId": "ID_NUMERICO_APP_APP_STORE_CONNECT",
+        "ascApiKeyPath": "./credentials/AuthKey_XXXXXXXXXX.p8",
+        "ascApiKeyId": "KEY_ID",
+        "ascApiKeyIssuerId": "ISSUER_ID"
+      },
+      "android": {
+        "serviceAccountKeyPath": "./credentials/google-play-service-account.json",
+        "track": "internal",
+        "releaseStatus": "draft"
+      }
+    }
+  }
+}
